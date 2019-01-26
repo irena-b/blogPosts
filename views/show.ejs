@@ -1,10 +1,15 @@
 <% include ./partials/header %>
-
-<div class="ui main text container segment">
-    <div class="ui huge header">
+<style  type="text/css">
+    .ui.main{
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+</style>
+<div class="ui main text container ">
+    <div class="ui huge header ">
         <%= blog.title %>
     </div>
-    <div class="ui top attached ">
+    <div class="ui top attached segment">
         <div class="item">
             <img class="ui centeres rounded image" src="<%= blog.image %>">
             <div class="content">

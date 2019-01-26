@@ -1,10 +1,21 @@
-.icon {
+i.coffee {
 font-size: 2em;
 }
-.container.segment{
-    margin-top: 7em;
+.main.container{
+    margin-top: 100px;
 }
-
+.ui.main{
+    margin-top: 100px;
+}
 #delete {
     display: inline;
+}
+.ui.footer.segment {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+}
+li {
+    list-style: none;
 }

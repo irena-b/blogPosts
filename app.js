@@ -11,7 +11,7 @@ mongoose.connect('mongodb://localhost:27017/restful_blog', { useNewUrlParser:tru
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(expressSanitizer());
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
 
 //MONGOOSE Model config schema setup
@@ -51,9 +51,7 @@ app.get('/blogs/new', function(req, res){
 app.post('/blogs', function(req, res){
     //create blog
     //sanitize req.body.blog.body which means req.body - is whatever comes from form and 
-    console.log(req.body)
     req.body.blog.body = req.sanitize(req.body.blog.body)//taking, sanitazing it and change 
-    console.log(req.body)
     Blog.create(req.body.blog , function(err, newBlog){
         if(err){
             res.render('new')
